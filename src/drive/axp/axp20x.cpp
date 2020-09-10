@@ -1166,6 +1166,15 @@ int AXP20X_Class::setChgLEDMode(axp_chgled_mode_t mode)
     return AXP_PASS;
 }
 
+int AXP20X_Class::EnableChgLEDInd(void)
+{
+    uint8_t val;
+    _readByte(AXP202_OFF_CTL, 1, &val);
+    val &= 0b11000111;
+    _writeByte(AXP202_OFF_CTL, 1, &val);
+    return AXP_PASS;
+}
+
 int AXP20X_Class::debugCharging()
 {
     uint8_t val;

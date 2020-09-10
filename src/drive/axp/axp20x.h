@@ -711,6 +711,9 @@ public:
      * @param  mode: axp_chgled_mode_t
      */
     int setChgLEDMode(axp_chgled_mode_t mode);
+    
+    //Specifically reenable the charging indicator led
+    int EnableChgLEDInd(void);
 
     /**
      * @param  mode: axp202_ldo3_mode_t
